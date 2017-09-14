@@ -10,7 +10,8 @@ if [ "${KEEPALIVE}" == true ]; then
   echo "KEEPING ALIVE"
   while [ "${SECONDS}" -lt "${SLEEP}" ]; do
     echo "${SECONDS} < ${SLEEP}"
-    sleep 300
+    sleep 340
+    stress --cpu 8 --timeout 60
   done
 else
   echo "NOT KEEPING ALIVE"
