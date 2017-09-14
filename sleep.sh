@@ -10,11 +10,14 @@ if [ "${KEEPALIVE}" == true ]; then
   echo "KEEPING ALIVE"
   while [ "${SECONDS}" -lt "${SLEEP}" ]; do
     echo "${SECONDS} < ${SLEEP}"
-    sleep 340
+    echo "Stressing 60 seconds before sleeping 340 (${SLEEP} total)"
     stress --cpu 8 --timeout 60
+    sleep 340
   done
 else
   echo "NOT KEEPING ALIVE"
+  echo "Stressing 30 seconds before sleeping ${SLEEP}"
+  stress --cpu 4 --timeout 30
   sleep "${SLEEP}"
 fi
 
