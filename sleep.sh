@@ -5,6 +5,9 @@ echo "SECONDS: ${SECONDS}"
 SECONDS=0
 echo "START: $(date)"
 echo "SLEEPING: ${SLEEP} seconds"
+echo "STRESSING: 8 CPUs for 60 seconds"
+stress --cpu 8 --timeout 60
+echo "...done with initial stressing"
 
 if [ "${KEEPALIVE}" == true ]; then
   echo "KEEPING ALIVE"
