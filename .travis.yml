@@ -1,4 +1,8 @@
 language: bash
+addons:
+  apt:
+    packages:
+    - stress
 env:
   - SLEEP=60
   - SLEEP=90
