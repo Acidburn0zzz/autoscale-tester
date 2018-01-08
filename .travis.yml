@@ -40,5 +40,5 @@ matrix:
     - SLEEP=10000 KEEPALIVE=false SHOULDERROR=true
 
 script:
-  #- travis_debug
+  - travis_debug
   - ./sleep.sh $SLEEP
