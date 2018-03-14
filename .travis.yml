@@ -1,5 +1,7 @@
 language: bash
 
+sudo: fase
+
 env:
   - SLEEP=30
   - SLEEP=60
@@ -43,19 +45,6 @@ addons:
     - cowsay
     - stress
 
-before_install:
-  - sysctl -n net.ipv6.conf.default.disable_ipv6
-  - sudo apt install -y libsdl2-dev
-  - ls -lahF /etc/apt/
-  - cat /etc/apt/sources.list
-  - ls -lahF /etc/apt/sources.list.d/
-  - cat /etc/apt/sources.list.d/*
-  - curl icanhazip.com
-  - uptime
-  - echo 'export PATH="/usr/games:$PATH"' >> ~/.profile
-  - source ~/.profile
-  - echo "$PATH"
-
 before_script:
   - curl icanhazip.com
   - uptime
@@ -65,5 +54,5 @@ script:
 
 after_script:
   - cat ~/apt-get-update.log
-  - cowsay "Alles gut!"
+  - /usr/games/cowsay "Alles gut!"
   - cat /var/log/dpkg.log

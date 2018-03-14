@@ -15,12 +15,12 @@ $echo "SLEEPING: ${SLEEP} seconds"
 
 echo '{}' | jq .
 
-if ! which cowsay; then
+if ! which /usr/games/cowsay; then
   echo "cowsay not installed"
   exit 1
 else
   echo "installed"
-  cowsay -h
+  /usr/games/cowsay -h
 fi
 
 if [ "${KEEPALIVE}" == true ]; then
